@@ -1,7 +1,152 @@
 /* ***************** utilities & containers ***************** */
+:root {
+    --primary-blue: #0C4A6E;
+    --off-white: #FAFAFA;
+    --gray: #C3C3C4;
+}
+
+.inner-container { /*Fixed-with container*/
+    max-width: 1528px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.0625rem;
+    /* display: flex
+    flex formatting for child items  */
+
+    /* flex-wrap: wrap
+    allows items to wrap onto multiple lines, also used to create 4 cards in teams container and 3 cards in plans container
+     */
+}
 
 /* ***************** global typography ***************** */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 1.625rem;
+}
+
+h2 {
+    font-size: 3.75rem;
+}
+
+h2 {
+    padding-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2.125rem;
+}
+
+ul {
+    list-style: disc;
+}
 
 /* ***************** header & footer ***************** */
+header {
+    padding: 1.625rem 0 1.625rem 0;
+    background-color: var(--primary-blue);
+    color: var(--off-white);
+    margin-bottom: 1.75rem;
+}
+
+footer {
+    color: var(--off-white);
+    background-color: var(--primary-blue);
+    padding: 1.625rem 0 1.625rem;
+}
 
 /* ***************** main content ***************** */
+.inner-container section {
+    padding-bottom: 6rem;
+}
+
+.team section,
+.plans section {
+    background-color: var(--gray);
+    padding: 1.75rem;
+}
+
+.team .flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    /* display: flex;
+    a flex container for the team section */
+
+    /* justify-content: flex-start;
+    align items to the start on the main axis */
+
+    /* align-items: stretch;
+    stretches items in columns to equal height per row so cards with different length of content still line up clearly */
+}
+
+.team .flex-container section {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+
+    /* align-items: center;
+    to make the avatar and texts align nicely horizontally */
+}
+
+.team .flex-container section {
+    width: calc((100% / 2) - (2.0625rem / 2));
+}
+
+.team img {
+    width: 12.5rem;
+}
+
+.plans .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch; 
+}
+
+.plan {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* center contents */
+    justify-content: space-between;
+
+    /* justify-content: space-between;
+    distributes the text elements inside the card vertically to push apart from each other just like the figma design*/
+}
+
+.plan {
+    width: calc((100% / 3) - (4.125rem / 3));
+}
+
+.plan,
+.plan section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* flex-direction: column;
+    stack plan texts vertically inside the card, so h3, h4, lists, and p flow from top to bottom */
+
+    /* align-items: center;
+    center inner text elements */
+}
+
+.plans p {
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
